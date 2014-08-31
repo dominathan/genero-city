@@ -48,6 +48,7 @@ gem 'gmaps4rails'
 
 #for signup
 gem 'devise', '3.3.0'
+gem 'omniauth-facebook'
 
 
 
