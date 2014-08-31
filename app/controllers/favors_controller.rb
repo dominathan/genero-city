@@ -1,5 +1,6 @@
 class FavorsController < ApplicationController
-  before_action :authenticate_user! [:index, :show]
+  before_filter :authenticate_user!
+
   before_action :set_favor, only: [:show, :edit, :update, :destroy]
 
   # GET /favors
