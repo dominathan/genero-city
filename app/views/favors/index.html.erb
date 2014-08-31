@@ -1,0 +1,37 @@
+<h1>Listing favors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @favors.each do |favor| %>
+      <tr>
+        <td><%= favor.address %></td>
+        <td><%= favor.latitude %></td>
+        <td><%= favor.longitude %></td>
+        <td><%= favor.title %></td>
+        <td><%= favor.description %></td>
+        <td><%= favor.user %></td>
+        <td><%= link_to 'Show', favor %></td>
+        <td><%= link_to 'Edit', edit_favor_path(favor) %></td>
+        <td><%= link_to 'Destroy', favor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Favor', new_favor_path %>
